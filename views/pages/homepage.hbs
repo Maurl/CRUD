@@ -1,0 +1,32 @@
+<h1>Cart</h1>
+
+<form method="GET" action="/products/create">
+    <input type="submit" value="ADD">
+</form>
+<br><br>
+<table id="t01">
+    <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Action Buttons</th>
+    </tr>
+    {{#each products}}
+    <tr>
+        <td>{{name}}</td>
+        <td>{{price}}</td>
+        <td>
+            <form method="GET" action="/products/{{ id }}">
+                <input type="submit" value="SHOW">
+            </form>
+
+            <form method="GET" action="/products/{{ id }}/edit">
+                <input type="submit" value="EDIT">
+            </form>
+
+            <form method="POST" action="/products/{{ id }}?_method=DELETE">
+                <input type="submit" value="DELETE">
+            </form>
+        </td>
+    </tr>
+    {{/each}}
+</table>

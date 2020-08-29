@@ -1,0 +1,17 @@
+<h1>Product</h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+    </tr>
+    <tr>
+        <td>{{product.name}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.price}}</td>
+    </tr>
+</table>
+
+<form method="POST" action="/products/{{ id }}?_method=DELETE">
+    <input type="submit" value="DELETE">
+</form>
